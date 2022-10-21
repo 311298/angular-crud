@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ApiService } from '../services/api.service';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { IProduct } from '../services/Model/model';
+import { IDropDown } from '../services/Model/model';
 
 @Component({
   selector: 'app-dialog',
@@ -16,6 +17,8 @@ export class DialogComponent implements OnInit {
   selectedValue!: string;
   productForm!: FormGroup
   actionButton: string = "Save"
+  selectedDropDownValue!: string
+  listOfDropDown!: IDropDown[]
 
   constructor(private fb: FormBuilder, private api: ApiService, private dialogRef: MatDialogRef<DialogComponent>,
     @Inject(MAT_DIALOG_DATA) public editData: IProduct // data coming from app.component for editing
@@ -42,6 +45,15 @@ export class DialogComponent implements OnInit {
         date: this.editData.date
       })
     }
+    // dropDown call
+    this.api.getDropDown().subscribe({
+      next: (response) => {
+        this.listOfDropDown = response
+      },
+      error: (err) => {
+        alert('something happend while loading the dropdown')
+      }
+    })
   }
 
   addProduct() {
@@ -76,5 +88,4 @@ export class DialogComponent implements OnInit {
       }
     })
   }
-
 }

@@ -7,3 +7,8 @@ export interface IProduct {
     productFreshness: string;
     id: number
 }
+
+export interface IDropDown {
+    value: string;
+    viewValue: string;
+}

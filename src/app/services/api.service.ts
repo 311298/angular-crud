@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { IProduct } from './Model/model';
+import { IDropDown, IProduct } from './Model/model';
 
 @Injectable({
   providedIn: 'root'
@@ -11,6 +11,7 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
 
+  // product api
   postProduct(data: IProduct) {
     return this.http.post<IProduct>(this.baseUrl, data)
   }
@@ -25,5 +26,10 @@ export class ApiService {
 
   deleteProduct(id: number) {
     return this.http.delete<IProduct>(this.baseUrl + '/' + id)
+  }
+
+  //dropDown api
+  getDropDown() {
+    return this.http.get<any>("http://localhost:3001/dropDown")
   }
 }

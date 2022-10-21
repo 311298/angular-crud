@@ -1,0 +1,26 @@
+{
+  "dropDown": [
+    {
+      "view": "1",
+      "viewValue": "Fruits"
+    },
+    {
+      "view": "2",
+      "viewValue": "Vegetables"
+    },
+    {
+      "view": "3",
+      "viewValue": "Electronics"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

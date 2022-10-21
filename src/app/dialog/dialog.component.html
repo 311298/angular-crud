@@ -5,12 +5,18 @@
             <mat-label>Product Name</mat-label>
             <input matInput placeholder="Name" formControlName="productName">
         </mat-form-field>
-        <mat-form-field appearance="outline">
+        <!-- <mat-form-field appearance="outline">
             <mat-label>Product Category</mat-label>
             <mat-select placeholder="Category" formControlName="category">
                 <mat-option value="fruits">Fruits</mat-option>
                 <mat-option value="vegetables">Vegetables</mat-option>
                 <mat-option value="electronic">Electronics</mat-option>
+            </mat-select>
+        </mat-form-field> -->
+        <mat-form-field>
+            <mat-label>Product Category</mat-label>
+            <mat-select placeholder="Category" formControlName="category">
+                <mat-option *ngFor="let dd of listOfDropDown " [value]="dd.viewValue">{{dd.viewValue}}</mat-option>
             </mat-select>
         </mat-form-field>
         <mat-form-field appearance="outline">

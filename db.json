@@ -1,15 +1,6 @@
 {
   "productList": [
     {
-      "productName": "apple",
-      "category": "fruits",
-      "productFreshness": "Brand New",
-      "price": 100,
-      "comment": "this is fresh apple",
-      "date": "2022-09-30T18:30:00.000Z",
-      "id": 1
-    },
-    {
       "productName": "mango",
       "category": "fruits",
       "productFreshness": "Second hand",
@@ -17,6 +8,15 @@
       "comment": "this is not fresh",
       "date": "2022-10-01T18:30:00.000Z",
       "id": 2
+    },
+    {
+      "productName": "mango",
+      "category": "Fruits",
+      "productFreshness": "Brand New",
+      "price": 999,
+      "comment": "success",
+      "date": "2022-10-30T18:30:00.000Z",
+      "id": 3
     }
   ],
   "comments": [
